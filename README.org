@@ -1,0 +1,36 @@
+* Campus-emacs
+Campus is a simple but effective improvement to the inferior-process
+repl development experience in emacs.
+
+Essentially, campus offers two main functions:
+
+- =campus-make-partition=: inserts a special comment that breaks the
+  existing code-section (at first the whole file) into two parts.
+- =campus-send-region=: sends the code-section you're in to a repl
+  process using a customizable list of commands.
+
+I find this useful when developing with a repl open and
+- I don't want to re-evaluate the whole file every time
+- My code isn't in a single function, so I can't use =C-M-x=.
+- I find myself selecting a region and using =C-c C-r= or the
+  equivalent frequently.
+
+* Installation
+Installable via straight like this:
+
+#+BEGIN_SRC emacs-lisp
+(straight-use-package
+ '(campus :type git
+          :repo "https://github.com/eshrh/campus-emacs"))
+#+END_SRC
+
+The source is self-contained in =campus.el= and depends on =s= and
+=dash=.
+
+* Customization
+Two main things to customize:
+
+- =campus-partition-string=: the comment string used for partitions.
+- =campus-eval-region-alist=: map of functions to use to eval code.
+  - see the docstring via =C-h f= or reading the source for more
+    info
