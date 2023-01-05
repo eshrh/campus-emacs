@@ -9,6 +9,8 @@
 
 ;;; Code:
 
+(require 's)
+(require 'dash)
 (defvar campus-partition-string "***"
   "String that is used in a comment to indicate the end of a partition.")
 
