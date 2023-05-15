@@ -14,6 +14,8 @@ I find this useful when developing with a repl open and
 - My code isn't in a single function, so I can't use =C-M-x=.
 - I find myself selecting a region and using =C-c C-r= or the
   equivalent frequently.
+  
+[[https://youtu.be/Vu_0vRgxZPs][video demo]]
 
 * Installation
 Installable via straight like this:
