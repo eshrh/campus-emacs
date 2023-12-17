@@ -2,10 +2,13 @@
 Campus is a simple but effective improvement to the inferior-process
 repl development experience in emacs.
 
-Essentially, campus offers two main functions:
+Essentially, campus offers three main functions:
 
 - =campus-make-partition=: inserts a special comment that breaks the
   existing code-section (at first the whole file) into two parts.
+- =campus-make-partition-from-region: delimits the selected region with 
+  the special partition comment. This operates somewhat like a cell in 
+  an interactive notebook.
 - =campus-send-region=: sends the code-section you're in to a repl
   process using a customizable list of commands.
 
