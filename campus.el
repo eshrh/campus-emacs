@@ -50,6 +50,8 @@ executed.")
 
 ;;;###autoload
 (defun campus-make-partition-from-region ()
+  "Delimit the current region with partitions.
+Note that if the mark is ahead of the point, they are exchanged."
   (interactive)
   (when (region-active-p)
     (save-excursion
