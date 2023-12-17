@@ -48,6 +48,23 @@ executed.")
         (setq line-no (+ 1 line-no)))
       (campus--insert-partition))))
 
+;;;###autoload
+(defun campus-make-partition-from-region ()
+  (interactive)
+  (when (region-active-p)
+    (save-excursion
+      ;; assume we have to open above the mark
+      ;; and below the point. not always the case.
+      (if (> (mark) (point))
+          (exchange-point-and-mark))
+      (end-of-line)
+      (newline)
+      (campus--insert-partition)
+      (goto-char (mark))
+      (beginning-of-line)
+      (open-line 1)
+      (campus--insert-partition))))
+
 (defmacro campus--remove-partition (searchform)
   "Remove a partition.
 SEARCHFORM is a form that takes the point to the line to be deleted."
